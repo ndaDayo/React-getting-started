@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+function formatName(user) {
+    return user.firstName + user.lastName;
+}
+
+const user = {
+    firstName: 'Nda',
+    lastName: 'Dayo'
+}
+
+const element = (
+    <p>This is {formatName(user)}</p>
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  element,
   document.getElementById('root')
 );
 
