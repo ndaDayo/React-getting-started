@@ -3,17 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-function tick(){
-    const element = (
-        <p>It is {new Date().toLocaleTimeString()}</p>
-    );
-    ReactDOM.render(
-        element,
-        document.getElementById('root')
-    );
+function Welcome(props){
+    return <p>ようこそ、{props.name}さん</p>
 }
 
-setInterval(tick,1000);
+const element = <Welcome name="nda" />;
+
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
