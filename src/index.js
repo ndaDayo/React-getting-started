@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-function Welcome(props) {
-    return <p>ようこそ、{props.name}さん</p>
-}
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
 
-function App() {
-    return (
-        <div>
-            <Welcome name="nda"/>
-            <Welcome name="mara"/>
-        </div>
-    )
+    render() {
+        return (
+            <p>It is {this.state.date.toLocaleTimeString()}</p>
+        )
+    }
 }
 
 ReactDOM.render(
-    <App />,
+    <Clock/>,
     document.getElementById('root')
 );
 // If you want to start measuring performance in your app, pass a function
