@@ -3,24 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-function formatName(user) {
-    return user.firstName + user.lastName;
+function tick(){
+    const element = (
+        <p>It is {new Date().toLocaleTimeString()}</p>
+    );
+    ReactDOM.render(
+        element,
+        document.getElementById('root')
+    );
 }
 
-const user = {
-    firstName: 'Nda',
-    lastName: 'Dayo'
-}
-
-const element = (
-    <p>This is {formatName(user)}</p>
-);
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
-
+setInterval(tick,1000);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
