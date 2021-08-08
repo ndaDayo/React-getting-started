@@ -1,23 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-function NumberList(props) {
-    const numbers = props.numbers;
-    const listItems = numbers.map((number) =>
-        <li key={number.toString}>
-            {number}
-        </li>
-    );
+function Example() {
+    const [count, setCount] = useState(0);
+
     return (
-        <ul>{listItems}</ul>
-    )
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
 }
 
-const numbers = [1, 2, 3];
 ReactDOM.render(
-    <NumberList numbers={numbers}/>,
+    <Example />,
     document.getElementById('root')
 );
 // If you want to start measuring performance in your app, pass a function
