@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) =>
-    <p>{number}</p>
-)
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+        <li key={number.toString}>
+            {number}
+        </li>
+    );
+    return (
+        <ul>{listItems}</ul>
+    )
+}
 
+const numbers = [1, 2, 3];
 ReactDOM.render(
-    listItems,
+    <NumberList numbers={numbers}/>,
     document.getElementById('root')
 );
 // If you want to start measuring performance in your app, pass a function
